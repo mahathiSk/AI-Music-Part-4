@@ -27,7 +27,7 @@ if(results.length >0) {
   leftWristX =results[0].pose.leftWrist.x; 
   leftWristY =results[0].pose.leftWrist.y; 
   console.log("leftWristX =" + leftWristX + "leftWristY =" + leftWristY ); 
-  scoreleftWrist =results[0].pose.keypoints[9].score;
+  ScoreleftWrist =results[0].pose.keypoints[9].score;
 
 
   RightWristX =results[0].pose.rightWrist.x; 
@@ -43,9 +43,6 @@ function draw() {
     stroke("red");
     song1status =music.isPlaying();
    
-    if(song1status == false ) {
-music.play()
-    }
 
     if(ScoreleftWrist>0.2){
       circle(leftWristX,leftWristY,10);
@@ -54,7 +51,7 @@ music.play()
       if(song1status == false ) {
         music.play()
         
-document.getElementById("song").innerHTML ="Senorita is Playing"
+document.getElementById("song").innerHTML ="Mushroom Chocolate is Playing"
       }
   }
 }
